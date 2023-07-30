@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <h1>Hello, Next.js 13 upgrade!</h1>
-      <Link href="/counter">to counter</Link>
+      <h1>from feeds!</h1>
+      <Link href="/home">to home</Link>
       <br />
       <Link href="/shop/shoes/nike-air-max-101?token=thisIsSecretToken1234&id=234234">
         to Nike Shop
