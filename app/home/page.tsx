@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   description: "Home page visually.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const { data } = await fetch("http://localhost:3000/pages/api/hello");
+  console.log("data is: ", data);
   return (
     <div>
       <h1>Hello home page, serving from Next.js 13!</h1>
