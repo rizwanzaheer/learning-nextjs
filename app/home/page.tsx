@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Home page",
@@ -11,8 +13,10 @@ export default async function Page() {
   console.log("data is: ", data);
   return (
     <div>
-      <h1>Hello home page, serving from Next.js 13!</h1>
-      <Link href="/counter">to counter</Link>
+      <Suspense fallback={<Loading />}>
+        <h1>Hello home page, serving from Next.js 13!</h1>
+        <Link href="/counter">to counter</Link>
+      </Suspense>
     </div>
   );
 }

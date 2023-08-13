@@ -14,7 +14,7 @@ type Props = {
 const fetchProductById = async (productId): Promise<any> => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${productId}`)
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((json) => console.log("json is: ", json));
 };
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {

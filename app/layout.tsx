@@ -1,3 +1,5 @@
+import ErrorBoundary from "./error-boundary";
+
 export default function RootLayout({
   children,
 }: {
@@ -6,8 +8,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div>this from root layout!</div>
-        {children}
+        <ErrorBoundary>
+          <div>this from root layout!</div>
+          {children}
+        </ErrorBoundary>
       </body>
     </html>
   );
