@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+
 import Link from "next/link";
 import { getData } from "../lib/data";
 
@@ -7,8 +8,19 @@ export const metadata: Metadata = {
   description: "Visual metadata home page description.",
 };
 
-export default async function Page() {
-  // await getData();
+export default async function Page({
+  children,
+  analytics,
+  team,
+}: {
+  children: React.ReactNode;
+  analytics: React.ReactNode;
+  team: React.ReactNode;
+}) {
+  // const res = await fetch("http://localhost:3000/api/"); // this will create error boundary stuff
+  const res = await fetch("http://localhost:3000/api/v1");
+  const data = await res.json();
+  console.log("data is: ", data);
   return (
     <div>
       <h1>Hello, Next.js 13 upgrade!</h1>
@@ -30,6 +42,8 @@ export default async function Page() {
       <div>
         <p id="setting">settings</p>
       </div>
+      {analytics}
+      {team}
     </div>
   );
 }

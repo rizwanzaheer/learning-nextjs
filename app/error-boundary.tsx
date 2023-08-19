@@ -21,7 +21,7 @@ export default class ErrorBoundary extends Component {
     // @ts-ignore
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <h1>Something went wrong.</h1>;
+      return <h1>Something went wrong from error-boundary.</h1>;
     }
     // @ts-ignore
     return this.props.children;

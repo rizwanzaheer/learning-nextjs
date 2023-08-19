@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const { data } = await fetch("http://localhost:3000/pages/api/hello");
+  const res = await fetch("http://localhost:3000/api/dashbaord");
+  const data = await res.json();
   console.log("data is: ", data);
   return (
     <div>
