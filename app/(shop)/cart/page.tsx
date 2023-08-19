@@ -10,7 +10,7 @@ export default async function Page() {
   // await getData();
   return (
     <div>
-      <h1>Cart!</h1>
+      <h1>Cart from intercept shop!</h1>
       <Link href="/account">Account</Link>
       <br />
       <Link href="/">home</Link>

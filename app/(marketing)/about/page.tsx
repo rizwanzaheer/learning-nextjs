@@ -10,7 +10,7 @@ export default async function Page() {
   // await getData();
   return (
     <div>
-      <h1>Marketing about!</h1>
+      <h1>Marketing about from intercept!</h1>
       <Link href="/">home</Link>
     </div>
   );

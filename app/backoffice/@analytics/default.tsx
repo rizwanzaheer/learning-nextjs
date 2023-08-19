@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <div>
-      <h1>default from analytics</h1>
+      <h1>default analytics from parallel routes</h1>
       <Link href="/counter">to counter</Link>
       <br />
       <Link href="/shop/shoes/nike-air-max-101?token=thisIsSecretToken1234&id=234234">

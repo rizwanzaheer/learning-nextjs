@@ -35,6 +35,10 @@ export default async function Page({
       <Link href="/error/should/show">to Error</Link>
       <br />
       <Link href="/error">to Error</Link>
+
+      {analytics}
+      {team}
+
       <div style={{ width: "100%", height: "200vh", backgroundColor: "gray" }}>
         <h1>this is style div</h1>
       </div>
@@ -42,8 +46,6 @@ export default async function Page({
       <div>
         <p id="setting">settings</p>
       </div>
-      {analytics}
-      {team}
     </div>
   );
 }

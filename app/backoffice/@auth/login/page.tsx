@@ -6,7 +6,7 @@ export default async function Login() {
   return (
     <>
       <span onClick={() => router.back()}>Close modal</span>
-      <h1>Login</h1>
+      <h1>Login from auth from parallel routes</h1>
     </>
   );
 }

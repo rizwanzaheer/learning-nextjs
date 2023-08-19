@@ -1,24 +1,21 @@
-import ErrorBoundary from "./error-boundary";
+import ErrorBoundary from "../error-boundary";
 
-export default function RootLayout({
+export default function BackOfficeLayout({
   children,
   analytics,
   team,
-  fundingSource,
 }: {
   children: React.ReactNode;
   analytics: React.ReactNode;
   team: React.ReactNode;
-  fundingSource: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>
         <ErrorBoundary>
-          <div>this from root layout!</div>
+          <div>this is from Back office layout!</div>
           {analytics}
           {team}
-          {fundingSource}
           {children}
         </ErrorBoundary>
       </body>

@@ -6,15 +6,20 @@ export const metadata: Metadata = {
   description: "Visual metadata home page description.",
 };
 
-export default function Page() {
+export default async function Page({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <h1>from feed!</h1>
+      <h1>from back office!</h1>
       <Link href="/home">to home</Link>
       <br />
       <Link href="/shop/shoes/nike-air-max-101?token=thisIsSecretToken1234&id=234234">
         to Nike Shop
       </Link>
+      {children}
     </div>
   );
 }
