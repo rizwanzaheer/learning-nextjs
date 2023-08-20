@@ -32,10 +32,14 @@ export default async function Page({
       <br />
       <Link href="/account">to Account</Link>
       <br />
-      <Link href="/error/should/show">to Error</Link>
+      <Link href="/backoffice">to back office</Link>
+      <br />
+      <Link href="/about">to about</Link>
       <br />
       <Link href="/error">to Error</Link>
+      <br />
 
+      <Link href="/error/should/show">to global not found</Link>
       {analytics}
       {team}
 
