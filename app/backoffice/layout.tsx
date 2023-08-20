@@ -10,15 +10,11 @@ export default function BackOfficeLayout({
   team: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <ErrorBoundary>
-          <div>this is from Back office layout!</div>
-          {analytics}
-          {team}
-          {children}
-        </ErrorBoundary>
-      </body>
-    </html>
+    <ErrorBoundary>
+      <div>this is from Back office layout!</div>
+      {analytics}
+      {team}
+      {children}
+    </ErrorBoundary>
   );
 }
