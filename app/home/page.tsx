@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const res = await fetch("http://localhost:3000/api/v1/dashboard");
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
   const data = await res.json();
   console.log("data is: ", data);
   return (
