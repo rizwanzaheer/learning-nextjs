@@ -1,5 +1,7 @@
 import ErrorBoundary from "./error-boundary";
 
+import "../styles/globals.css";
+
 export default function RootLayout({
   children,
   analytics,
