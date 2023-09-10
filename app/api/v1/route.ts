@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   console.log("token is: ", token);
 
 
-  return NextResponse.json({ token });
+  return NextResponse.json({ data: token });
 
   // return new Response("Hello, Next.js!", {
   //   status: 200,
