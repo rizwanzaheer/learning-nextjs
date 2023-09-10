@@ -6,10 +6,12 @@ export default function RootLayout({
   children,
   analytics,
   team,
+  auth,
   fundingSource,
 }: {
   children: React.ReactNode;
   analytics: React.ReactNode;
+  auth: React.ReactNode;
   team: React.ReactNode;
   fundingSource: React.ReactNode;
 }) {
@@ -20,6 +22,7 @@ export default function RootLayout({
           <div>this from root layout!</div>
           {analytics}
           {team}
+          {auth}
           {fundingSource}
           {children}
         </ErrorBoundary>
