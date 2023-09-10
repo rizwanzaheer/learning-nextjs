@@ -24,8 +24,8 @@ export default async function Page({
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
-  const data = await res.json();
-  console.log("data is: ", data);
+  // const data = await res.json();
+  console.log("res is: ", res);
   return (
     <div>
       <h1>Hello, Next.js 13 upgrade!</h1>
