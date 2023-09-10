@@ -18,7 +18,7 @@ export default async function Page({
   team: React.ReactNode;
 }) {
   // const res = await fetch("http://localhost:3000/api/"); // this will create error boundary stuff
-  const res = await fetch("http://localhost:3000/api/v1");
+  const res = await fetch(`${process.env.BASE_URL}/api/v1`);
   console.log("res.ok is: ", res.ok);
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
