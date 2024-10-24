@@ -1,15 +1,16 @@
 import Link from "next/link";
 
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params: {
-    tag: string;
-    item: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function Page(
+  props: {
+    params: Promise<{
+      tag: string;
+      item: string;
+    }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   console.log("p is: ", params);
   console.log("searchParams is: ", searchParams);
   return (
