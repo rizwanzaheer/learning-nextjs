@@ -1,3 +1,4 @@
+// "use client";
 import { Metadata } from "next";
 
 type Props = {
@@ -18,11 +19,10 @@ const fetchProductById = async (productId): Promise<any> => {
 };
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
-  const { params } = props;
-  console.log("props is: ", /* @next-codemod-error 'props' is passed as an argument. Any asynchronous properties of 'props' must be awaited when accessed. */
-  props);
-  const product = await fetchProductById(params.productId);
-  // console.log("product is: ", product);
+  const { params } = await props;
+
+  const product = await fetchProductById((await params).productId);
+
   return {
     title: product?.title,
     description: product?.body,

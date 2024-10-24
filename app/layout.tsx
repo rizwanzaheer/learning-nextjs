@@ -4,15 +4,15 @@ import "../styles/globals.css";
 
 export default function RootLayout({
   children,
-  analytics,
-  team,
-  auth,
-  fundingSource,
-}: {
+}: // fundingSource,
+// analytics,
+// team,
+// auth,
+{
   children: React.ReactNode;
-  analytics: React.ReactNode;
-  auth: React.ReactNode;
-  team: React.ReactNode;
+  // analytics: React.ReactNode;
+  // auth: React.ReactNode;
+  // team: React.ReactNode;
   fundingSource: React.ReactNode;
 }) {
   return (
@@ -20,10 +20,10 @@ export default function RootLayout({
       <body>
         <ErrorBoundary>
           <div>this from root layout!</div>
-          {analytics}
+          {/* {analytics}
           {team}
-          {auth}
-          {fundingSource}
+          {auth}*/}
+          {/* {fundingSource} */}
           {children}
         </ErrorBoundary>
       </body>

@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const res = await fetch(`${process.env.BASE_URL}/api/v1/dashboard`);
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-  const data = await res.json();
-  console.log("data is: ", data);
+  // const res = await fetch(`${process.env.BASE_URL}/api/v1/dashboard`);
+  // if (!res.ok) {
+  //   // This will activate the closest `error.js` Error Boundary
+  //   throw new Error("Failed to fetch data");
+  // }
+  // const data = await res.json();
+  // console.log("data is: ", data);
   return (
     <div>
       <Suspense fallback={<Loading />}>
