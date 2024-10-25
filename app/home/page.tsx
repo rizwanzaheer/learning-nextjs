@@ -1,7 +1,10 @@
+import { Suspense, version } from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
+import getConfig from "next/config";
 import Loading from "./loading";
+
+const { publicRuntimeConfig } = getConfig();
 
 export const metadata: Metadata = {
   title: "Home page",
@@ -19,7 +22,11 @@ export default async function Page() {
   return (
     <div>
       <Suspense fallback={<Loading />}>
-        <h1>Hello home page, serving from Next.js 13 home page!</h1>
+        <h1>
+          Hello home page, serving from Next.js{" "}
+          {publicRuntimeConfig?.dependencies.next} with React {version} home
+          page!
+        </h1>
         <Link href="/counter">to counter</Link>
       </Suspense>
     </div>

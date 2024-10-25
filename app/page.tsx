@@ -1,7 +1,11 @@
 import { Metadata } from "next";
+import { version } from "react";
 
 import Link from "next/link";
-import { getData } from "../lib/data";
+import getConfig from "next/config";
+// import { getData } from "../lib/data";
+
+const { publicRuntimeConfig } = getConfig();
 
 export const metadata: Metadata = {
   title: "Visual metadata home page",
@@ -9,15 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-//   {
-//   children,
-// }: // analytics,
-// // team,
-// {
-//   children: React.ReactNode;
-//   // analytics: React.ReactNode;
-//   // team: React.ReactNode;
-// }
+  //   {
+  //   children,
+  // }: // analytics,
+  // // team,
+  // {
+  //   children: React.ReactNode;
+  //   // analytics: React.ReactNode;
+  //   // team: React.ReactNode;
+  // }
   // const res = await fetch("http://localhost:3000/api/"); // this will create error boundary stuff
   // const res = await fetch(`${process.env.BASE_URL}/api/v1`);
   // console.log("res.ok is: ", res.ok);
@@ -29,7 +33,10 @@ export default async function Page() {
   // console.log("res is: ", res);
   return (
     <div>
-      <h1>Hello, Next.js 13 upgrade!</h1>
+      <h1>
+        Hello, serving from Next.js {publicRuntimeConfig?.dependencies.next}{" "}
+        with React {version} version!
+      </h1>
       <Link href="/counter">to counter</Link>
       <br />
       <Link href="/shop/shoes/nike-air-max-101?token=thisIsSecretToken1234&id=234234">

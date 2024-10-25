@@ -1,5 +1,9 @@
 // "use client";
 import { Metadata } from "next";
+import getConfig from "next/config";
+import { version, use } from "react";
+
+const { publicRuntimeConfig } = getConfig();
 
 type Props = {
   params: Promise<{ productId: string }>;
@@ -18,9 +22,10 @@ const fetchProductById = async (productId): Promise<any> => {
     .then((json) => console.log("json is: ", json));
 };
 
-export const generateMetadata = async (props: Props): Promise<Metadata> => {
-  const { params } = await props;
-
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  // const tt = use(params);
   const product = await fetchProductById((await params).productId);
 
   return {
@@ -30,5 +35,10 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 };
 
 export default function ProductDetail() {
-  return <h1>this is the Product detail page serving from Next.js 13!</h1>;
+  return (
+    <h1>
+      this is the Product detail page serving from Next.js{" "}
+      {publicRuntimeConfig?.dependencies.next} with React {version}
+    </h1>
+  );
 }
